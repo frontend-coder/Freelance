@@ -1,0 +1,40 @@
+/* font-family: "RobotoThin"; */
+@font-face {
+	font-family: "RobotoThin";
+	src: url("../fonts/RobotoThin/RobotoThin.eot");
+	src: url("../fonts/RobotoThin/RobotoThin.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/RobotoThin/RobotoThin.woff") format("woff"),
+	url("../fonts/RobotoThin/RobotoThin.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+/* font-family: "OpenSansRegular"; */
+@font-face {
+	font-family: "OpenSansRegular";
+	src: url("../fonts/OpenSansRegular/OpenSansRegular.eot");
+	src: url("../fonts/OpenSansRegular/OpenSansRegular.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/OpenSansRegular/OpenSansRegular.woff") format("woff"),
+	url("../fonts/OpenSansRegular/OpenSansRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+/* font-family: "OpenSansLight"; */
+@font-face {
+	font-family: "OpenSansLight";
+	src: url("../fonts/OpenSansLight/OpenSansLight.eot");
+	src: url("../fonts/OpenSansLight/OpenSansLight.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/OpenSansLight/OpenSansLight.woff") format("woff"),
+	url("../fonts/OpenSansLight/OpenSansLight.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+/* font-family: "MyraRegular"; */
+@font-face {
+	font-family: "MyraRegular";
+	src: url("../fonts/MyraRegular/MyraRegular.eot");
+	src: url("../fonts/MyraRegular/MyraRegular.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/MyraRegular/MyraRegular.woff") format("woff"),
+	url("../fonts/MyraRegular/MyraRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
