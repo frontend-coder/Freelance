@@ -1,16 +1,30 @@
 $(document).ready(function() {
 
 //адаптивная картинка в header при min-height
-// function wResize() {
-// $("header").css("height", $(window).height());
-// };
-// wResize();
-// $(window).resize(function() {
-// wResize()
-// });
+
+function wResize() {
+$("header").css("height", $(window).height());
+};
+wResize();
+$(window).resize(function() {
+wResize()
+});
+
+
 
 // одинаковой высоты разные по длине ашки
 $(".our-work h3").equalHeights();
+
+	$(".top-menu ul li a").mPageScroll2id({
+		 layout:"auto",
+		 offset:".top-line",
+		scrollEasing: "linear",
+		highlightByNextTarget: true,
+		keepHighlightUntilNext: true,
+		 autoScrollSpeed: true,
+		scrollSpeed : 1000
+	});
+
 
 
 // галерея всплывающая
@@ -38,6 +52,11 @@ type:'inline',
 		}, 800);
 		return false;
 	});
+
+
+
+
+
 // вверхнее красиво-вращающееся меню
 // 1 и 2 строка это анимация крестика
 //3 строка - слайдер вниз меню
@@ -47,50 +66,51 @@ $(".top-menu").slideToggle();
 return false;
 });
 
-	//Плавный скролл до блока .div по клику на .scroll
-	//Документация: https://github.com/flesler/jquery.scrollTo
-	$("a.scroll").click(function() {
-		$.scrollTo($(".div"), 800, {
-			offset: -90
-		});
-	});
 
-	
 
-	
-	//Аякс отправка форм
+
+
+// всплывающие окна позвонить мне
+
+$("a[href='#call-back']").magnificPopup ({
+	mainClass:'my-mfp-zoom-in',
+	removalDelay:300,
+	type:'inline',
+}); 
+/*чтобы в формах был индивидуальный заголовок */
+$("a[href='#call-back']").click(function(){
+	var dataForm = $(this).data("form");
+	var dataText = $(this).data("text");
+	$(".forms-call h4").text(dataText);
+	$(".forms-call [name=admin-data]").val(dataForm);
+
+});
+
+
+
+
+
+//Аякс отправка форм
 	//Документация: http://api.jquery.com/jquery.ajax/
-	$(".forms-call").submit(function() {
+
+$("form").submit(function() { //Change
+		var th = $(this);
 		$.ajax({
 			type: "POST",
-			url: "mail-call.php",
-			data: $(this).serialize()
+			url: "mail.php", //Change
+			data: th.serialize()
 		}).done(function() {
-			alert("Спасибо за заявку! Мы позвоним Вам в рабочее время.");
+			$(".forms-call .success").addClass("active");
 			setTimeout(function() {
+				// Done Functions
+				$(".forms-call .success").removeClass("active");
+				th.trigger("reset");
 				$.magnificPopup.close();
-				$(".forms-call").trigger("reset");
-			}, 1000);
+			}, 3000);
 		});
 		return false;
 	});
 
-	
-		//Аякс отправка форм
-	//Документация: http://api.jquery.com/jquery.ajax/
-	$(".forms").submit(function() {
-		$.ajax({
-			type: "POST",
-			url: "mail.php",
-			data: $(this).serialize()
-		}).done(function() {
-			alert("Спасибо за заявку! Мы позвоним Вам в рабочее время.");
-			setTimeout(function() {
-				$.magnificPopup.close();
-				$(".forms").trigger("reset");
-			}, 1000);
-		});
-		return false;
-	});
+
 
 });

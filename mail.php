@@ -1,19 +1,21 @@
 <?php
 
-$frm_name  = "Тестовое имя";
 $recepient = "webrabsite@gmail.com";
-$sitename  = "Весточка с тестового сайта";
-$subject   = "Новая заявка с сайта verstka.tmweb.ru";
+$sitename  = "Тестирование шаблона БКР";
+$subject   = "Заказ с сайта Тестирование шаблона БКР";
 
 $name = trim($_POST["name"]);
 $phone = trim($_POST["phone"]);
-$formname = trim($_POST["formname"]);
+$formaone = trim($_POST["formaone"]);
+$admindata = trim($_POST["admin-data"]);
 
 $message = "
-Место размещения формы в шаблоне: $formname <br>
-Имя обратившегося: $name <br>
-Телефон: $phone
-";
+С какого сайта пришло сообщение: $sitename  <br>
+Место размещения формы в шаблоне: $formaone  <br>
+Место размещения во всплывающей форме: $admindata  <br>
+Имя обратившегося: $name  <br>
+Телефон: $phone;
 
-mail($recepient, $subject, $message, "From: $frm_name <$email>" . "\r\n" . "Reply-To: $email" . "\r\n" . "X-Mailer: PHP/" . phpversion() . "\r\n" . "Content-type: text/html; charset=\"utf-8\"");
+$pagetitle = "Новая заявка с сайта \"$sitename\"";
+mail($recepient, $subject, $message, "Content-type: text/html; charset=\"utf-8\"\n From: $recepient");
 ?>
