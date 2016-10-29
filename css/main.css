@@ -534,3 +534,59 @@ border-bottom:#B97200 3px solid;
 background-color:#FFB338;}
 .buttons:active
 {background-color:#DB8C0E;}
+/*оформление всплывающей формы а ниже и благодарности */
+.forms-calldecor {
+-webkit-transition:all .3s ease;
+transition:all .3s ease;
+position: relative;
+-moz-transition: all 0.5s else;
+transition: all 0.5s else;
+max-width: 320px;
+overflow: hidden;
+margin: auto;
+border-radius: 1em;
+box-shadow: 0 1px 0 10px rgba(154, 255, 105, .80);
+}
+.forms-calldecor h4 {
+color: #fff;
+/* 	margin-bottom: 30px; */
+text-align: center;
+font-size: 2.3em;
+}
+#call-back .mfp-close {
+color: #fff;
+border: none;
+background-color: transparent;
+}
+.success {
+color: #fff;
+font-size: 1.8em;
+background-color:rgba(154, 255, 105, .80);
+position: absolute;
+z-index: 1;
+left: 0;
+top: -100%;
+width: 100%;
+height: 100%;
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+opacity: 0;
+-webkit-transition: all 0.5s ease;
+-moz-transition: all 0.5s ease;
+transition: all 0.5s ease;
+}
+.success.active{
+top: 0;
+opacity: 1;
+}
+.success p {
+margin: auto;
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+color: #000;
+margin:auto;
+}

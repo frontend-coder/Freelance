@@ -69,7 +69,6 @@ return false;
 
 
 
-
 // всплывающие окна позвонить мне
 
 $("a[href='#call-back']").magnificPopup ({
@@ -81,12 +80,10 @@ $("a[href='#call-back']").magnificPopup ({
 $("a[href='#call-back']").click(function(){
 	var dataForm = $(this).data("form");
 	var dataText = $(this).data("text");
-	$(".forms-call h4").text(dataText);
+	$(".forms-call h3").text(dataText);
 	$(".forms-call [name=admin-data]").val(dataForm);
 
 });
-
-
 
 
 
@@ -100,13 +97,13 @@ $("form").submit(function() { //Change
 			url: "mail.php", //Change
 			data: th.serialize()
 		}).done(function() {
-			$(".forms-call .success").addClass("active");
+			$(".forms-calldecor .success").addClass("active");
 			setTimeout(function() {
 				// Done Functions
-				$(".forms-call .success").removeClass("active");
+				$(".forms-calldecor .success").removeClass("active");
 				th.trigger("reset");
 				$.magnificPopup.close();
-			}, 3000);
+			}, 1000);
 		});
 		return false;
 	});
